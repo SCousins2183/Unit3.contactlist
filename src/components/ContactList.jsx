@@ -39,6 +39,15 @@ export default function ContactList({ setSelectedContactId }) {
             {contacts.map((contact) => {
               return <ContactRow key={contact.id} contact={contact} />
             })}
+            <tr
+      onClick={() => {
+        setSelectedContactId(props.contact.id);
+      }}
+    >
+      <td>{props.contact.name}</td>
+      <td>{props.contact.email}</td>
+      <td>{props.contact.phone}</td>
+    </tr>
           </tbody>
         </table>
     ); 
@@ -51,7 +60,7 @@ export default function ContactList({ setSelectedContactId }) {
   // }
   // ContactRow(props);
 
-// <ContactRow name={'jeff'} />
+// <ContactRow name={'scott'} />
 
 // function ContactRow(props) {
 //   const key = props.key;
@@ -59,4 +68,4 @@ export default function ContactList({ setSelectedContactId }) {
 //   const hasCat = props.hasCat;
 // }
 
-// ContactRow('jeff');
+// ContactRow('scott');
